@@ -14,5 +14,5 @@ public interface SearchEngine {
 
   <T> Search.SearchBuilder<T> searchIds(Class<T> idClass);
 
-  void deleteDocument(Class indexClass, List<Long> ids);
+  void deleteDocuments(Class indexClass, List<Long> documentIds);
 }
