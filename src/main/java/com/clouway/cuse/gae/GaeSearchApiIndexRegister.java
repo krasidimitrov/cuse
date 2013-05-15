@@ -32,15 +32,13 @@ public class GaeSearchApiIndexRegister implements IndexRegister {
     addDocumentInIndex(strategy.getIndexName(), document);
   }
 
-
-
-  private void addDocumentInIndex(String indexName, Document document) {
-    loadIndex(indexName).put(document);
-  }
-
   public Index loadIndex(String indexName) {
     return SearchServiceFactory.getSearchService().getIndex(IndexSpec.newBuilder()
             .setName(indexName));
+  }
+
+  private void addDocumentInIndex(String indexName, Document document) {
+    loadIndex(indexName).put(document);
   }
 
   private Document buildDocument(Object instance, String documentId, List<String> fields, List<String> fullTextFields) {

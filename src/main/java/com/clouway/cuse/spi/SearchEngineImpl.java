@@ -53,13 +53,13 @@ public class SearchEngineImpl implements SearchEngine {
   }
 
   @Override
-  public void deleteDocuments(Class indexClass, List<Long> documentIds) {
+  public void deleteDocuments(String indexName, List<Long> documentIds) {
     List<String> stringIds = new ArrayList<String>();
     for (Long id : documentIds)
     {
       stringIds.add(String.valueOf(id));
     }
-    indexRegister.loadIndex(indexClass.getSimpleName()).delete(stringIds);
+    indexRegister.loadIndex(indexName).delete(stringIds);
   }
 
 }
