@@ -2,7 +2,6 @@ package com.clouway.cuse.spi;
 
 import com.google.inject.Inject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,12 +53,7 @@ public class SearchEngineImpl implements SearchEngine {
 
   @Override
   public void delete(String indexName, List<Long> objectIds) {
-    List<String> stringIds = new ArrayList<String>();
-    for (Long id : objectIds)
-    {
-      stringIds.add(String.valueOf(id));
-    }
-    indexRegister.loadIndex(indexName).delete(stringIds);
+    indexRegister.delete(indexName, objectIds);
   }
 
 }
