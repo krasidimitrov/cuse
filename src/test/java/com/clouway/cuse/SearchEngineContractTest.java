@@ -450,7 +450,7 @@ public abstract class SearchEngineContractTest {
 
     store(new User(1l, "John"));
 
-    searchEngine.deleteDocuments(User.class.getSimpleName(), Lists.newArrayList(1l));
+    searchEngine.delete(User.class.getSimpleName(), Lists.newArrayList(1l));
 
     List<Long> result = searchEngine.searchIds(Long.class).inIndex(User.class)
             .where("name", SearchFilters.is("John"))
@@ -466,7 +466,7 @@ public abstract class SearchEngineContractTest {
     store(new User(1l, "John"));
     store(new User(2l, "John"));
 
-    searchEngine.deleteDocuments(User.class.getSimpleName(), Lists.newArrayList(1l, 2l));
+    searchEngine.delete(User.class.getSimpleName(), Lists.newArrayList(1l, 2l));
 
     List<Long> result = searchEngine.searchIds(Long.class).inIndex(User.class)
             .where("name", SearchFilters.is("John"))
