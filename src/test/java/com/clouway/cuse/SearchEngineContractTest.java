@@ -446,7 +446,7 @@ public abstract class SearchEngineContractTest {
   }
 
   @Test
-  public void deleteOneDocumentById(){
+  public void deleteOneObjectById(){
 
     store(new User(1l, "John"));
 
@@ -461,7 +461,7 @@ public abstract class SearchEngineContractTest {
   }
 
   @Test
-  public void deleteMoreThanOneDocumentByIds(){
+  public void deleteMoreThanOneObjectByIds(){
 
     store(new User(1l, "John"));
     store(new User(2l, "John"));
